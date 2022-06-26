@@ -18,7 +18,7 @@ yarn build
 ### Lints and fixes files
 ```
 yarn lint
-```
+```11
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
