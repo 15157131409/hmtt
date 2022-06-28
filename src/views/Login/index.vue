@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 登录头部 -->
-    <van-nav-bar title="标题" left-arrow>
+    <van-nav-bar title="标题" left-arrow @click-left="$router.back()">
       <van-icon name="cross" slot="left" />
     </van-nav-bar>
     <!-- 登录头部 -->
@@ -20,7 +20,8 @@
           },
         ]"
       >
-        <i class="toutiao toutiao-shouji" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-shouji" slot="left-icon"></i> -->
+        <Myicon name="shouji" slot="left-icon"></Myicon>
       </van-field>
       <van-field
         v-model.trim="code"
@@ -86,6 +87,7 @@ export default {
         const res = await login(values)
         console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }

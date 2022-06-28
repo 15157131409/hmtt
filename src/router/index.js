@@ -16,7 +16,7 @@ const routes = [
       { path: 'home', component: Home },
       { path: 'video', component: Video },
       { path: 'qa', component: Qa },
-      { path: 'my', component: My }
+      { path: 'my', component: My, name: 'my' }
 
     ]
   },
