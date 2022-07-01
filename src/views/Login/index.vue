@@ -74,7 +74,7 @@ export default {
   created () { },
   data () {
     return {
-      mobile: '13911111111', // 手机号
+      mobile: '15157131409', // 手机号13911111111
       code: '246810', // 验证码
       time: 5 * 1000,
       isCountDownShow: false
@@ -85,7 +85,7 @@ export default {
     async onSubmit (values) {
       try {
         const res = await login(values)
-        console.log(res)
+        // console.log(res)
         this.$store.commit('setUser', res.data.data)
         this.$router.push({ name: 'my' })
       } catch (err) {

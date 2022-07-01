@@ -10,6 +10,13 @@ import 'amfe-flexible'
 import Myicon from '@/components/Myicon.vue'
 // import '@/style/reset.less'
 import '@/style/index.less'
+
+// 一次型把filters/index.js 中所有的按需要导出全部导出来
+// 作为obj的属性
+import * as obj from '@/filters'
+Object.keys(obj).forEach(key => {
+  Vue.filter(key, obj[key])
+})
 Vue.component('Myicon', Myicon)
 Vue.use(Vant)
 Vue.config.productionTip = false
@@ -20,4 +27,11 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const a = 1
+// 给页面上所有的元素绑定滚动事件
+//  只要谁滚动 就打印出来
+// const list = document.querySelectorAll('*')
+// list.forEach(item => {
+//   item.onscroll = function (e) {
+//     console.log(e.target)
+//   }
+// })
