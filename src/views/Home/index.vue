@@ -3,7 +3,7 @@
     <!-- 顶部导航 -->
     <van-nav-bar class="bar" fixed>
       <template #title>
-        <van-button type="info" icon="search" round class="search-btn"
+        <van-button type="info" icon="search" round class="search-btn" to="/search"
           >搜索</van-button
         >
       </template>
@@ -68,7 +68,7 @@ export default {
     async getMyChannerls () {
       const channels = getItem(CHANNELS)
       if (!(this.$store.state.user && this.$store.state.user.token) && channels) {
-        console.log(this.channels)
+        // console.log(this.channels)
         this.channels = channels
       } else {
         try {

@@ -22,7 +22,7 @@ const routes = [
     ]
   },
   { path: '/login', component: Login },
-  { path: '/Search', component: Search }
+  { path: '/search', component: Search }
 ]
 
 const router = new VueRouter({
