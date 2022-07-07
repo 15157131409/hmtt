@@ -14,11 +14,16 @@ import '@/style/index.less'
 // 一次型把filters/index.js 中所有的按需要导出全部导出来
 // 作为obj的属性
 import * as obj from '@/filters'
+
+import FollowUser from '@/components/FollowUser.vue'
+import '@/components'
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })
 Vue.component('Myicon', Myicon)
 Vue.use(Vant)
+Vue.component(FollowUser.name, FollowUser)
+
 Vue.config.productionTip = false
 
 new Vue({
